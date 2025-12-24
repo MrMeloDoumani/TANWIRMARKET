@@ -21,9 +21,9 @@
 <body>
     <!-- Desktop Navigation -->
     <nav class="nav-desktop">
-        <a href="#market" class="nav-link">Market</a>
+        <a href="#atelier" class="nav-link">Atelier</a>
         <a href="#philosophy" class="nav-link">Philosophy</a>
-        <a href="#community" class="nav-link">Community</a>
+        <button class="nav-link nav-join" id="openSignup">Join</button>
     </nav>
 
     <!-- Mobile FAB Navigation -->
@@ -33,9 +33,38 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="#market" class="mobile-link">Market</a>
+            <a href="#atelier" class="mobile-link">Atelier</a>
             <a href="#philosophy" class="mobile-link">Philosophy</a>
-            <a href="#community" class="mobile-link">Community</a>
+            <button class="mobile-link mobile-join" id="openSignupMobile">Join</button>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeSignup">×</button>
+            <div class="signup-step signup-step-1" id="signupStep1">
+                <h3 class="modal-title">Begin your journey</h3>
+                <p class="modal-subtitle">Enter to receive illumination.</p>
+                <form id="signupForm">
+                    <input type="email" class="signup-input" placeholder="Your email" required>
+                    <button type="submit" class="signup-button">Continue →</button>
+                </form>
+            </div>
+            <div class="signup-step signup-step-2" id="signupStep2" style="display: none;">
+                <h3 class="modal-title">What do you seek?</h3>
+                <p class="modal-subtitle">Choose your path.</p>
+                <div class="path-options">
+                    <button class="path-button" data-path="create">
+                        <span class="path-icon">◇</span>
+                        <span class="path-label">I create</span>
+                    </button>
+                    <button class="path-button" data-path="seek">
+                        <span class="path-icon">○</span>
+                        <span class="path-label">I seek</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -47,6 +76,7 @@
         <div class="hero-content">
             <h1 class="hero-logo">TANWIR</h1>
             <p class="hero-tagline">Feel Again.</p>
+            <a href="https://www.mrmelo.com/" target="_blank" class="hero-attribution">A MrMelo Concept →</a>
         </div>
     </section>
 
@@ -71,26 +101,29 @@
         </div>
     </section>
 
-    <!-- HYPERMARKET SECTION -->
-    <section class="hypermarket" id="market">
-        <div class="market-header">
-            <span class="section-label">The Market</span>
+    <!-- ATELIER SECTION (formerly Hypermarket) -->
+    <section class="atelier" id="atelier">
+        <div class="atelier-header">
+            <span class="section-label">The Atelier</span>
             <h2 class="section-title">Tools for the willing.</h2>
         </div>
-        <div class="market-grid">
-            <!-- Flagship: Feel Again (2x2) -->
-            <article class="tile tile-flagship">
+        <div class="atelier-grid">
+            <!-- Feel Again -->
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/feel-again.png" alt="Feel Again">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">Feel Again</h3>
                     <p class="tile-desc">Immersive sensory experiences.</p>
                 </div>
-                <div class="tile-visual">
-                    <div class="visual-abstract"></div>
-                </div>
             </article>
 
             <!-- Read With Us -->
-            <article class="tile tile-secondary">
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/read.png" alt="Read With Us">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">Read With Us</h3>
                     <p class="tile-desc">Read. Be read to. Learn.</p>
@@ -98,7 +131,10 @@
             </article>
 
             <!-- Watch With Us -->
-            <article class="tile tile-secondary">
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/watch.png" alt="Watch With Us">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">Watch With Us</h3>
                     <p class="tile-desc">Watch. Discuss. Meet the makers.</p>
@@ -106,7 +142,10 @@
             </article>
 
             <!-- Taftish -->
-            <article class="tile tile-small">
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/taftish.png" alt="Taftish">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">Taftish</h3>
                     <p class="tile-desc">Research reimagined.</p>
@@ -114,15 +153,21 @@
             </article>
 
             <!-- Methodologies -->
-            <article class="tile tile-small">
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/methodologies.png" alt="Methodologies">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">Methodologies</h3>
                     <p class="tile-desc">Learn from the masters.</p>
                 </div>
             </article>
 
-            <!-- Community -->
-            <article class="tile tile-small">
+            <!-- The Collective -->
+            <article class="tile">
+                <div class="tile-image">
+                    <img src="images/collective.png" alt="The Collective">
+                </div>
                 <div class="tile-content">
                     <h3 class="tile-title">The Collective</h3>
                     <p class="tile-desc">Connect. Collaborate. Create.</p>
@@ -135,7 +180,8 @@
     <footer class="footer">
         <p class="footer-tagline">Enlightenment through art and technology.</p>
         <p class="footer-contact">hello@tanwir.com</p>
-        <p class="footer-copy">© 2025 Tanwir</p>
+        <p class="footer-copy">© 2025 Tanwir · <a href="https://www.mrmelo.com/" target="_blank">A MrMelo Concept</a>
+        </p>
     </footer>
 
     <script>
@@ -149,10 +195,56 @@
         });
 
         // Close menu when link clicked
-        document.querySelectorAll('.mobile-link').forEach(link => {
+        document.querySelectorAll('.mobile-link:not(.mobile-join)').forEach(link => {
             link.addEventListener('click', () => {
                 fab.classList.remove('active');
                 menu.classList.remove('active');
+            });
+        });
+
+        // Signup Modal
+        const modal = document.getElementById('signupModal');
+        const openBtns = [document.getElementById('openSignup'), document.getElementById('openSignupMobile')];
+        const closeBtn = document.getElementById('closeSignup');
+        const step1 = document.getElementById('signupStep1');
+        const step2 = document.getElementById('signupStep2');
+        const form = document.getElementById('signupForm');
+
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.add('active');
+                fab.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            step1.style.display = 'block';
+            step2.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                step1.style.display = 'block';
+                step2.style.display = 'none';
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            step1.style.display = 'none';
+            step2.style.display = 'block';
+        });
+
+        document.querySelectorAll('.path-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const path = btn.dataset.path;
+                alert(`You chose: ${path}. We'll be in touch!`);
+                modal.classList.remove('active');
+                step1.style.display = 'block';
+                step2.style.display = 'none';
             });
         });
     </script>
