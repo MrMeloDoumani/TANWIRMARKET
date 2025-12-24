@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANWIR — Feel Again</title>
+    <meta name="description"
+        content="Enlightenment through art and technology. A sanctuary for thinkers, feelers, and creators.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop">
+        <a href="#market" class="nav-link">Market</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#community" class="nav-link">Community</a>
+    </nav>
+
+    <!-- Mobile FAB Navigation -->
+    <button class="fab-spark" id="fabSpark" aria-label="Open menu">
+        <span class="fab-icon">✦</span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#market" class="mobile-link">Market</a>
+            <a href="#philosophy" class="mobile-link">Philosophy</a>
+            <a href="#community" class="mobile-link">Community</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <div class="hero-video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-logo">TANWIR</h1>
+            <p class="hero-tagline">Feel Again.</p>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section class="philosophy" id="philosophy">
+        <div class="philosophy-header">
+            <span class="section-label">Philosophy</span>
+            <h2 class="section-title">The love of wisdom.</h2>
+        </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-video">
+                <div class="video-placeholder">
+                    <span class="placeholder-text">The Witness</span>
+                </div>
+            </div>
+            <div class="philosophy-quote">
+                <blockquote>
+                    "Art is not a mirror. It's a match."
+                </blockquote>
+                <p class="quote-subtext">Think deeply. Feel fully. Act deliberately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HYPERMARKET SECTION -->
+    <section class="hypermarket" id="market">
+        <div class="market-header">
+            <span class="section-label">The Market</span>
+            <h2 class="section-title">Tools for the willing.</h2>
+        </div>
+        <div class="market-grid">
+            <!-- Flagship: Feel Again (2x2) -->
+            <article class="tile tile-flagship">
+                <div class="tile-content">
+                    <h3 class="tile-title">Feel Again</h3>
+                    <p class="tile-desc">Immersive sensory experiences.</p>
+                </div>
+                <div class="tile-visual">
+                    <div class="visual-abstract"></div>
+                </div>
+            </article>
+
+            <!-- Read With Us -->
+            <article class="tile tile-secondary">
+                <div class="tile-content">
+                    <h3 class="tile-title">Read With Us</h3>
+                    <p class="tile-desc">Read. Be read to. Learn.</p>
+                </div>
+            </article>
+
+            <!-- Watch With Us -->
+            <article class="tile tile-secondary">
+                <div class="tile-content">
+                    <h3 class="tile-title">Watch With Us</h3>
+                    <p class="tile-desc">Watch. Discuss. Meet the makers.</p>
+                </div>
+            </article>
+
+            <!-- Taftish -->
+            <article class="tile tile-small">
+                <div class="tile-content">
+                    <h3 class="tile-title">Taftish</h3>
+                    <p class="tile-desc">Research reimagined.</p>
+                </div>
+            </article>
+
+            <!-- Methodologies -->
+            <article class="tile tile-small">
+                <div class="tile-content">
+                    <h3 class="tile-title">Methodologies</h3>
+                    <p class="tile-desc">Learn from the masters.</p>
+                </div>
+            </article>
+
+            <!-- Community -->
+            <article class="tile tile-small">
+                <div class="tile-content">
+                    <h3 class="tile-title">The Collective</h3>
+                    <p class="tile-desc">Connect. Collaborate. Create.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-tagline">Enlightenment through art and technology.</p>
+        <p class="footer-contact">hello@tanwir.com</p>
+        <p class="footer-copy">© 2025 Tanwir</p>
+    </footer>
+
+    <script>
+        // Mobile FAB Menu Toggle
+        const fab = document.getElementById('fabSpark');
+        const menu = document.getElementById('mobileMenu');
+
+        fab.addEventListener('click', () => {
+            fab.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                fab.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
